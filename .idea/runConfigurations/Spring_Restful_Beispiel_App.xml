@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Spring Restful Beispiel App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" activateToolWindowBeforeRun="false">
+    <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="de.yutamago.SpringWebApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <module name="spring-restful-beispiel_main" />
+    <envs />
+    <method />
+  </configuration>
+</component>
