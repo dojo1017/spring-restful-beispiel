@@ -19,28 +19,28 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public Collection<User> getUsers(Model model) {
+	@RequestMapping(method = RequestMethod.GET)
+	public Collection<User> getUsers() {
 		return userService.getUsers();
 	}
 
 	@RequestMapping(value = "/{username}", method = RequestMethod.GET)
-	public User getUser(@PathVariable("username") String username, Model model) {
+	public User getUser(@PathVariable("username") String username) {
 		return userService.getUser(username);
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public User insertUser(@RequestBody User user, Model model) {
+	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public User insertUser(@RequestBody User user) {
 		return userService.insertUser(user);
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void updateUser(@RequestBody User user, Model model) {
+	@RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void updateUser(@RequestBody User user) {
 		userService.updateUser(user);
 	}
 
 	@RequestMapping(value = "/{username}", method = RequestMethod.DELETE)
-	public void deleteUser(@PathVariable("username") String username, Model model) {
+	public void deleteUser(@PathVariable("username") String username) {
 		userService.deleteUser(username);
 	}
 }
