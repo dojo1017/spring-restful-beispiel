@@ -23,8 +23,14 @@ public class UserService {
 		return userDao.getUsers();
 	}
 
-	public User getUser(String username) {
-		return userDao.getUser(username);
+	public User getUser(String username) throws IllegalArgumentException {
+		User user = userDao.getUser(username);
+
+		if (user == null) {
+			throw new IllegalArgumentException("User with this name does not exist.");
+		}
+
+		return user;
 	}
 
 	public User insertUser(User user) {
